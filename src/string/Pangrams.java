@@ -22,7 +22,7 @@ public class Pangrams {
     public static boolean isPangram(String s){
         boolean[] check = new boolean[128];
 
-        for(int i = 0; i < s.length()-1; i++){
+        for(int i = 0; i < s.length(); i++){
             int val = s.charAt(i);
             if(!check[val]){
                 check[val] = true;
