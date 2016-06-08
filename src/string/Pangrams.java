@@ -9,8 +9,8 @@ public class Pangrams {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a string");
         String s = sc.nextLine();
-
-
+        s = s.replaceAll("\\s+","").toLowerCase();
+        System.out.println(s);
         if(isPangram(s)){
             System.out.println("pangram");
         }else{
@@ -20,7 +20,6 @@ public class Pangrams {
     }
 
     public static boolean isPangram(String s){
-        s = s.toLowerCase();
         boolean[] check = new boolean[128];
 
         for(int i = 0; i < s.length()-1; i++){
@@ -34,10 +33,10 @@ public class Pangrams {
     }
 
     public static boolean checkingTheArray(boolean[] temp){
-        boolean contains = false;
+        boolean contains = true;
         for(int i = 97; i <= 122; i++ ){
-            if(temp[i]){
-                contains = true;
+            if(!temp[i]){
+                contains = false;
             }
         }
         return contains;
